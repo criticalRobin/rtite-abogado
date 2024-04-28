@@ -1,0 +1,84 @@
+---
+import { Hero } from "@modules/Hero";
+import Layout from "../layouts/Layout.astro";
+import { LogosSlider } from "@modules/LogosSlider";
+
+import { FadeIn } from "@utils/animations/FadeIn";
+import { Button } from "@components/Button";
+import { Icon } from "@static/icons";
+import { Contact } from "@modules/Contact";
+---
+
+<Layout
+    title="Agency Aestro | Offers"
+    description="YOUR META DESCRIPTION FOR SEO"
+>
+    <main class="page-content">
+        <Hero heroType="center" client:load>
+            <FadeIn delay={0.2} client:load>
+                <h1>What we offer?</h1>
+                <p>
+                    lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+                    do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua. lorem ipsum
+                </p>
+            </FadeIn>
+            <FadeIn delay={0.3} client:load>
+                <Button link="/contact" variant="secondary">
+                    Contact us
+                </Button>
+            </FadeIn>
+            <FadeIn client:load delay={0.4}>
+                <div class="icon-wrapper">
+                    <Icon iconData="arrowDown" alt="arrow down icon" />
+                </div>
+            </FadeIn>
+        </Hero>
+        <LogosSlider client:load />
+        <Hero
+            heroType="textImage"
+            client:load
+            content={{
+                title: `We will help grow your business`,
+                paragraph: `lorem ipsum dolores lorem ipsum dolores lorem ipsum dolores lorem ipsum dolores lorem ipsum dolores lorem ipsum dolores `,
+                image: {
+                    src: "https://picsum.photos/630/400?random=1",
+                    alt: "hero section image",
+                    width: 300,
+                    height: 300,
+                },
+            }}
+        />
+        <Hero
+            heroType="textImage"
+            client:load
+            content={{
+                switchPlaces: true,
+                title: `Section 2`,
+                paragraph: `lorem ipsum dolores lorem ipsum dolores lorem ipsum dolores lorem ipsum dolores lorem ipsum dolores lorem ipsum dolores `,
+                image: {
+                    src: "https://picsum.photos/630/400?random=2",
+                    alt: "hero section image",
+                    width: 300,
+                    height: 300,
+                },
+            }}
+        />
+
+        <Hero
+            heroType="textImage"
+            client:load
+            content={{
+                title: `Section 3`,
+                paragraph: `lorem ipsum dolores lorem ipsum dolores lorem ipsum dolores lorem ipsum dolores lorem ipsum dolores lorem ipsum dolores `,
+                image: {
+                    src: "https://picsum.photos/630/400?random=3",
+                    alt: "hero section image",
+                    width: 300,
+                    height: 300,
+                },
+            }}
+        />
+        <Contact client:load />
+    </main>
+</Layout>

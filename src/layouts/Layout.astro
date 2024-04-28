@@ -1,0 +1,55 @@
+---
+import { NormalizeCSS } from "../styles/normalize";
+import { Global } from "@emotion/react";
+import { PreviewPng } from "@static/images";
+import { Header } from "@modules/Header";
+import { Footer } from "@modules/Footer";
+
+interface Props {
+    title: string;
+    description: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.ico?v=2" />
+        <meta name="generator" content={Astro.generator} />
+        <meta name="description" content={description} />
+        <meta
+            name="robots"
+            content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
+        />
+        <meta
+            name="keywords"
+            content="astro.build, astro, static site, react, webiste templates, website creation, react templates, next.js templates, astro templates, custom website, custom website templates"
+        />
+
+        <meta name="color-scheme" content="light only" />
+
+        <meta property="og:url" content="https://codexcode.pl" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="CodexCode" />
+        <meta property="og:image" content={PreviewPng.src} />
+        <meta property="og:description" content={description} />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="CodexCode" />
+        <meta name="twitter:description" content={description} />
+        <meta name="twitter:image" content={PreviewPng.src} />
+        <meta property="twitter:domain" content="codexcode.pl" />
+        <meta property="twitter:url" content="https://codexcode.pl" />
+        <title>{title}</title>
+        <Global styles={NormalizeCSS} />
+    </head>
+    <body>
+        <Header client:load />
+        <slot />
+        <Footer client:visible />
+    </body>
+</html>

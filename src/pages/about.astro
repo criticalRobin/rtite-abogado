@@ -1,0 +1,89 @@
+---
+import { ContentSection } from "@modules/ContentSection";
+import Layout from "../layouts/Layout.astro";
+import { FadeIn } from "@utils/animations/FadeIn";
+import { BoxOffers } from "@modules/BoxOffers";
+import { Container } from "@components/Container";
+import { Hero } from "@modules/Hero";
+---
+
+<Layout title="Agency Aestro" description="YOUR META DESCRIPTION FOR SEO">
+    <main class="page-content">
+        <ContentSection
+            style={{
+                maxWidth: "600px",
+                margin: "0 auto",
+            }}
+        >
+            <FadeIn client:visible>
+                <h1>About us</h1>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Nullam ultricies, nunc nec vehicula ultricies, nunc nec
+                    vehicula ultricies, nunc nec vehicula
+                </p>
+            </FadeIn>
+        </ContentSection>
+        <Hero
+            heroType="textImage"
+            client:load
+            content={{
+                switchPlaces: true,
+                title: `About us`,
+                paragraph: `lorem ipsum dolores lorem ipsum dolores lorem ipsum dolores lorem ipsum dolores lorem ipsum dolores lorem ipsum dolores `,
+                image: {
+                    src: "https://picsum.photos/630/400?random=2",
+                    alt: "hero section image",
+                    width: 300,
+                    height: 300,
+                },
+            }}
+        />
+
+        <Hero
+            heroType="textImage"
+            client:load
+            content={{
+                title: `About us more`,
+                paragraph: `lorem ipsum dolores lorem ipsum dolores lorem ipsum dolores lorem ipsum dolores lorem ipsum dolores lorem ipsum dolores `,
+                image: {
+                    src: "https://picsum.photos/630/400?random=3",
+                    alt: "hero section image",
+                    width: 300,
+                    height: 300,
+                },
+            }}
+        />
+        <Container>
+            <FadeIn client:visible>
+                <h2>Check our profiles!</h2>
+            </FadeIn>
+        </Container>
+        <BoxOffers
+            client:load
+            boxes={[
+                {
+                    asLink: true,
+                    href: "https://www.facebook.com",
+                    content: `
+                        <h3>Facebook</h3>
+                    `,
+                },
+                {
+                    asLink: true,
+                    href: "https://www.linkedin.com/c",
+                    content: `
+                        <h3>Linkedin</h3>
+                    `,
+                },
+                {
+                    asLink: true,
+                    href: "https://www.twitter.com",
+                    content: `
+                        <h3>Twitter</h3>
+                    `,
+                },
+            ]}
+        />
+    </main>
+</Layout>
