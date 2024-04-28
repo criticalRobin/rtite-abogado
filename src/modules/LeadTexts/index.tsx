@@ -12,16 +12,24 @@ type LeadTextsProps = {
 
 // Hide exp is for hiding the commercial experience - on the LeadTexts page cuz there is a separate section for that
 export const LeadTexts: FC<LeadTextsProps> = ({ contentText, title }) => {
-    if (!contentText) return null;
+    //  do not render if there is no contentText
+    if (!contentText && !title) {
+        return null;
+    }
+
     return (
         <S.LeadTextsStyled>
             <Container>
                 <S.LeadTextsContent>
-                    <S.LeadTextsContentTitle>
-                        <FadeIn>
-                            <h2 dangerouslySetInnerHTML={{ __html: title }} />
-                        </FadeIn>
-                    </S.LeadTextsContentTitle>
+                    {title && (
+                        <S.LeadTextsContentTitle>
+                            <FadeIn>
+                                <h2
+                                    dangerouslySetInnerHTML={{ __html: title }}
+                                />
+                            </FadeIn>
+                        </S.LeadTextsContentTitle>
+                    )}
                     <S.LeadTextsContentText>
                         {contentText.map((content, index) => {
                             return (

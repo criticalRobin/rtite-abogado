@@ -15,6 +15,11 @@ export const LogosSlider: FC = () => {
      */
     const data = LogosSliderData;
 
+    // do not render if there are no elements
+    if (!data || data.length === 0) {
+        return null;
+    }
+
     /**
      * List of the slides
      */

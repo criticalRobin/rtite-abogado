@@ -23,6 +23,12 @@ export const TextImage: FC<TextImageProps> = ({
     image,
     switchPlaces = false,
 }) => {
+    // do not render this component if there is no title or image
+    if (!title && !paragraph && !image) {
+        return null;
+    }
+
+    // image can be from local source or from external source
     const displayImage = image.srcLocal ? (
         <S.TextImage
             srcLocal={image.srcLocal}
@@ -42,8 +48,12 @@ export const TextImage: FC<TextImageProps> = ({
         <S.TextImageStyled $switchPlaces={switchPlaces}>
             <FadeIn delay={0.2}>
                 <S.TextImageContent>
-                    <h1 dangerouslySetInnerHTML={{ __html: title }} />
-                    <p dangerouslySetInnerHTML={{ __html: paragraph }} />
+                    {title && (
+                        <h1 dangerouslySetInnerHTML={{ __html: title }} />
+                    )}
+                    {paragraph && (
+                        <p dangerouslySetInnerHTML={{ __html: paragraph }} />
+                    )}
 
                     {buttons && buttons.length > 0 && (
                         <S.ButtonsWrapper>
@@ -62,9 +72,11 @@ export const TextImage: FC<TextImageProps> = ({
                     )}
                 </S.TextImageContent>
             </FadeIn>
-            <FadeIn>
-                <S.TextImageFigure>{displayImage}</S.TextImageFigure>
-            </FadeIn>
+            {image && (
+                <FadeIn>
+                    <S.TextImageFigure>{displayImage}</S.TextImageFigure>
+                </FadeIn>
+            )}
         </S.TextImageStyled>
     );
 };

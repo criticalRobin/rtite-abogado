@@ -21,6 +21,8 @@ export const TextBox: FC<TextBoxProps> = ({
     boxAsLink,
     ...rest
 }) => {
+    if (!children) return null;
+
     /**
      * box can appear as a link if needed
      */

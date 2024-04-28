@@ -19,6 +19,15 @@ type HeroProps = {
  * @content is for the content of the specific hero type
  */
 export const Hero: FC<HeroProps> = ({ heroType, children, content }) => {
+    /*
+     * content can be passed as children or as content prop
+     * if content is passed as children, it will be used as content
+     * if content is passed as content prop, it will be used as content via custom html
+     */
+    if (!children && !content) {
+        return null;
+    }
+
     let HeroTypeOutput;
     switch (heroType) {
         case "center":
