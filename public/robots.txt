@@ -3,4 +3,4 @@ Disallow: /cgi-bin/
 Disallow: /tmp/
 Disallow: /private/
 
-Sitemap: http://www.codexcode.pl/sitemap.xml
+Sitemap: http://www.CHANGEME.com/sitemap.xml

@@ -8,7 +8,7 @@ export const Socials: FC = ({ ...rest }) => {
             <S.SocialsList>
                 <S.SocialsListItem>
                     <S.SocialsLink
-                        href="https://www.facebook.com/people/CodexCode/61557714076333/"
+                        href="https://www.facebook.com"
                         target="_blank"
                         rel="noreferrer"
                     >
@@ -17,7 +17,7 @@ export const Socials: FC = ({ ...rest }) => {
                 </S.SocialsListItem>
                 <S.SocialsListItem>
                     <S.SocialsLink
-                        href="https://www.linkedin.com/company/codexcode/"
+                        href="https://www.linkedin.com"
                         target="_blank"
                         rel="noreferrer"
                     >

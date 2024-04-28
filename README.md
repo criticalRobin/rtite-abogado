@@ -1,6 +1,6 @@
-# 🚀 Bloobers Template Page astro + react
+# 🚀Agency Aestro Template Page
 
-![bloobers](/src/static/images/preview.webp)
+![Agency Aestro Template Page](/src/static/images/preview.webp)
 
 ## 🚀 Static Media
 
@@ -11,6 +11,14 @@ There are 3 folders
 -   icons
 
 every of those folders have index.ts where you can find import / export files + for images and icons, we create special components
+
+# 🚀 Sitemap & robots.tsx
+
+## IMPORTANT
+
+Change links & add all your pages into sitemap.cjs to have better SEO optimization!
+
+search for CHANGEME in files & replace all instances
 
 ## 🚀 Images
 
@@ -24,7 +32,7 @@ every of those folders have index.ts where you can find import / export files + 
   <Icon iconData="home" alt="home" />
 ```
 
-use those componets for media to keep best performance or in astro files use images from astro - also good!
+use those components for media to keep best performance or in astro files use images from astro - also good!
 
 ## 🚀 Styles
 
@@ -48,14 +56,6 @@ to keep code consisted use only enum Theme, to have very easy switch between lig
 | `npm run preview`         | Preview your build locally, before deploying     |
 | `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
 | `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-# 🚀 Sitemap & robots.tsx
-
-## IMPORTANT
-
-Change links & add all your pages into sitemap.cjs to have better SEO optimization!
-
-search for bloobers in files & replace all instances
 
 ## 🧞 Contact & Support
 

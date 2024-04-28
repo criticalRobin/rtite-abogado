@@ -7,22 +7,17 @@ const date = new Date().toISOString();
 const links = [
     { url: "/", changefreq: "daily", lastmod: date, priority: 1 },
     { url: "/about", changefreq: "monthly", lastmod: date, priority: 0.7 },
+    { url: "/offers", changefreq: "monthly", lastmod: date, priority: 0.9 },
     {
-        url: "/offers",
+        url: "/contact",
         changefreq: "monthly",
-        lastmod: date,
-        priority: 0.5,
-    },
-    {
-        url: "https://www.codexcode.store",
-        changefreq: "weekly",
         lastmod: date,
         priority: 0.5,
     },
 ];
 
 // Create a stream to write to
-const stream = new SitemapStream({ hostname: "https://www.codexcode.pl" });
+const stream = new SitemapStream({ hostname: "https://www.CHANGEME.com" });
 
 // Return a promise that resolves with your XML string
 return streamToPromise(Readable.from(links).pipe(stream)).then((data) => {
