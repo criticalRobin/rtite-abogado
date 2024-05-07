@@ -59,8 +59,8 @@ to keep code consisted use only enum Theme, to have very easy switch between lig
 
 ## 🧞 Contact & Support
 
-If you have any problems or questions, please let us know here: [Contact Form](https://www.codexcode.store/pages/contact)
+If you have any problems or questions, please let us know here: [Contact Form](https://codexcode.store/contact)
 
 ## Authors
 
--   [@codexcode](https://www.codexcode.pl)
+-   [@codexcode](https://codexcode.store)
