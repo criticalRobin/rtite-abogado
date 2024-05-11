@@ -4,6 +4,8 @@ dist/
 # generated types
 .astro/
 
+yarn.lock
+package-lock.json
 # dependencies
 node_modules/
 
@@ -23,3 +25,19 @@ pnpm-debug.log*
 .dist
 
 .vscode
+
+
+# Release Notes
+
+## Version v1.0.1 (Saturday, May 11, 2024)
+
+### Changes
+
+-   Change meta tags display
+-   Add Tailwind setup (if you like to use it now you can)
+-   Add new way of display Sitemap
+-   Readme instructions
+
+### Delted
+
+-   Old sitemap file
